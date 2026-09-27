@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M2H Elevators - Under Construction</title>
+    <style>
+        :root {
+            --primary-green: #70b62c; 
+            --dark-charcoal: #1a1a1a;  
+            --light-bg: #fcfcfc;       
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-charcoal);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding: 40px 20px;
+        }
+
+        /* Logo Styling */
+        .logo-container {
+            margin-bottom: 40px;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+            max-height: 180px;
+            display: inline-block;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(112, 182, 44, 0.1);
+            color: var(--primary-green);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 10px 0 24px 0;
+            border: 1px solid rgba(112, 182, 44, 0.2);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            height: 6px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--primary-green);
+            width: 75%; 
+            border-radius: 10px;
+        }
+
+        .footer {
+            border-top: 1px solid #e5e5e5;
+            padding-top: 30px;
+        }
+
+        .footer h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            color: #888;
+        }
+
+        .contact-link {
+            color: var(--dark-charcoal);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: color 0.2s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--primary-green);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo file linked relatively. Assumes html file and image are in the same folder -->
+        <div class="logo-container">
+            <img src="Logo.jpg" alt="M2H Elevators Logo">
+        </div>
+
+        <div>
+            <div class="badge">Under Construction</div>
+        </div>
+
+        <h1>Our Website is Launching Soon</h1>
+        <p>We are currently working hard behind the scenes to deliver a brand new digital experience. We appreciate your patience!</p>
+
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="footer">
+            <h3>Get In Touch</h3>
+            <a href="mailto:info@m2helevators.com" class="contact-link">m2helevators2022@gmail.com</a>
+        </div>
+    </div>
+
+</body>
+</html>
