@@ -1241,6 +1241,323 @@
             }
         }
 
+
+/* =========================================================
+   MOBILE OPTIMIZATION — CLEAN CORPORATE LAYOUT
+   ========================================================= */
+@media (max-width: 650px) {
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        background: #f7f8f9;
+    }
+
+    /* Keep the decorative geometry subtle on phones */
+    body::before {
+        width: 92px;
+        height: 520px;
+        opacity: 0.55;
+        background:
+            linear-gradient(
+                135deg,
+                var(--red) 0 30%,
+                transparent 30% 43%,
+                var(--navy) 43% 57%,
+                transparent 57%
+            );
+    }
+
+    body::after {
+        width: 105px;
+        height: 430px;
+        opacity: 0.55;
+        background:
+            linear-gradient(
+                315deg,
+                var(--navy) 0 38%,
+                transparent 38% 48%,
+                var(--red) 48% 60%,
+                transparent 60%
+            );
+    }
+
+    /* The desktop header is unnecessary on mobile because the hero
+       contains the centered brand lock-up. */
+    header {
+        min-height: 0;
+        height: 0;
+        padding: 0;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    /* Hero becomes a deliberate vertical mobile composition */
+    .hero {
+        width: 100%;
+        min-height: auto;
+        max-width: 100%;
+        margin: 0;
+        padding: 24px 18px 46px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        text-align: center;
+    }
+
+    /* Logo no longer floats over the heading */
+    .hero-brand {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        margin: 0 auto 2px;
+    }
+
+    .hero-brand img {
+        width: min(245px, 78vw);
+        max-width: 245px;
+        height: auto;
+        max-height: 108px;
+        object-fit: contain;
+        display: block;
+        filter: drop-shadow(0 8px 18px rgba(23,34,49,0.10));
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 520px;
+        animation: fadeUp 0.8s ease both;
+    }
+
+    .eyebrow {
+        margin: 0 auto 18px;
+        padding: 8px 13px;
+        gap: 8px;
+        font-size: 0.62rem;
+        letter-spacing: 1.05px;
+        white-space: nowrap;
+    }
+
+    .eyebrow span {
+        width: 6px;
+        height: 6px;
+    }
+
+    h1 {
+        font-size: clamp(2.65rem, 12.5vw, 4rem);
+        line-height: 0.98;
+        letter-spacing: -2.2px;
+        margin: 0 auto 22px;
+        max-width: 390px;
+    }
+
+    .hero-description {
+        max-width: 390px;
+        margin: 0 auto 26px;
+        font-size: 0.98rem;
+        line-height: 1.7;
+        color: #697179;
+    }
+
+    .buttons {
+        width: 100%;
+        max-width: 390px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+    }
+
+    .btn {
+        width: 100%;
+        min-height: 54px;
+        padding: 15px 18px;
+        border-radius: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Elevator visual is smaller and sits cleanly below the CTAs */
+    .hero-visual {
+        width: 100%;
+        min-height: 0;
+        display: flex;
+        justify-content: center;
+        animation: fadeUp 1s ease 0.15s both;
+    }
+
+    .lift-card {
+        width: min(310px, 86vw);
+        height: 330px;
+        border-radius: 18px;
+    }
+
+    .card-label {
+        left: 20px;
+        top: 20px;
+        font-size: 0.64rem;
+    }
+
+    .card-label strong {
+        font-size: 0.98rem;
+    }
+
+    .shaft {
+        width: 130px;
+        height: 235px;
+        border-width: 6px;
+    }
+
+    .lift {
+        width: 82px;
+        height: 112px;
+        bottom: 25px;
+        border-width: 4px;
+    }
+
+    .lift-door {
+        top: 6px;
+        bottom: 6px;
+    }
+
+    .control-panel {
+        right: 6px;
+        top: 40px;
+        width: 13px;
+        height: 68px;
+    }
+
+    .control-panel::before {
+        top: 7px;
+        left: 4px;
+        width: 5px;
+        height: 5px;
+        box-shadow:
+            0 15px 0 #fff,
+            0 30px 0 #fff,
+            0 45px 0 #fff;
+    }
+
+    .red-shape {
+        right: -42px;
+        top: 48px;
+        width: 100px;
+        height: 145px;
+    }
+
+    .green-line {
+        left: -38px;
+        bottom: 48px;
+        width: 105px;
+        height: 7px;
+    }
+
+    .info-strip {
+        width: 100%;
+        margin: 0 auto 52px;
+        padding: 0 18px;
+    }
+
+    .info-grid {
+        border-radius: 15px;
+    }
+
+    .info-item {
+        padding: 20px 18px;
+    }
+
+    .info-item span {
+        font-size: 0.72rem;
+    }
+
+    .coming-soon {
+        width: 100%;
+        padding: 0 20px 60px;
+    }
+
+    .section-tag {
+        font-size: 0.64rem;
+        letter-spacing: 1.5px;
+    }
+
+    h2 {
+        font-size: 1.9rem;
+        line-height: 1.12;
+        letter-spacing: -0.7px;
+    }
+
+    .coming-soon p {
+        font-size: 0.94rem;
+        line-height: 1.7;
+    }
+
+    .progress-box {
+        margin-top: 28px;
+    }
+
+    .contact-section {
+        padding: 52px 18px;
+    }
+
+    .contact-grid {
+        gap: 10px;
+    }
+
+    .contact-card {
+        padding: 19px 13px;
+    }
+
+    .contact-card a {
+        font-size: 0.82rem;
+        overflow-wrap: anywhere;
+    }
+
+    footer {
+        padding: 19px 14px;
+        font-size: 0.68rem;
+    }
+}
+
+/* Extra-small phones */
+@media (max-width: 380px) {
+    .hero {
+        padding-left: 15px;
+        padding-right: 15px;
+        gap: 26px;
+    }
+
+    .hero-brand img {
+        width: 220px;
+        max-height: 98px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        letter-spacing: -1.8px;
+    }
+
+    .hero-description {
+        font-size: 0.92rem;
+    }
+
+    .lift-card {
+        width: 285px;
+        height: 310px;
+    }
+}
+
     </style>
 </head>
 
