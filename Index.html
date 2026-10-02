@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+      Home | M2H Elevators
+    </title>
+    <meta name="description" content="M2H Elevators — installation, modernization, sales and service.">
+    <style>
+:root {
+  --green:#90B63E;
+  --dark:#1F201F;
+  --white:#fff;
+  --soft:#f4f6f1;
+  --line:#dfe4da;
+  --muted:#687066;
+}
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+html {
+  scroll-behavior:smooth;
+}
+body {
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  color:var(--dark);
+  background:#fff;
+  line-height:1.6;
+}
+a {
+  text-decoration:none;
+  color:inherit;
+}
+.container {
+  width:min(1180px,92%);
+  margin:auto;
+}
+.topbar {
+  background:var(--dark);
+  color:#fff;
+  font-size:13px;
+}
+.topbar .inner {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:9px 0;
+}
+.header {
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:#fff;
+  border-bottom:1px solid #eee;
+}
+.nav {
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+.logo {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+  letter-spacing:-.5px;
+}
+.logo img {
+  height:75px;
+  width:auto;
+  object-fit:contain;
+}
+.logo-text {
+  font-size:21px;
+}
+.logo-text span {
+  color:var(--green);
+}
+.links {
+  display:flex;
+  align-items:center;
+  gap:28px;
+  font-weight:700;
+  font-size:14px;
+}
+.links a {
+  position:relative;
+  padding:28px 0;
+}
+.links a:hover,.links a.active {
+  color:var(--green);
+}
+.links a.active:after {
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:18px;
+  height:2px;
+  background:var(--green);
+}
+.menu {
+  display:none;
+  border:0;
+  background:none;
+  font-size:27px;
+  cursor:pointer;
+}
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:var(--green);
+  color:var(--dark);
+  font-weight:900;
+  padding:13px 21px;
+  border-radius:4px;
+  transition:.2s;
+  border:1px solid var(--green);
+}
+.btn:hover {
+  transform:translateY(-2px);
+  filter:brightness(.95);
+}
+.btn.dark {
+  background:var(--dark);
+  border-color:var(--dark);
+  color:#fff;
+}
+.btn.outline {
+  background:transparent;
+  color:var(--dark);
+}
+.hero {
+  background:linear-gradient(105deg,var(--dark) 0%,#282a28 62%,#3b4136 100%);
+  color:#fff;
+  padding:105px 0 95px;
+  position:relative;
+  overflow:hidden;
+}
+.hero:after {
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  border:1px solid rgba(144,182,62,.35);
+  border-radius:50%;
+  right:-170px;
+  top:-180px;
+}
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  gap:65px;
+  align-items:center;
+}
+.kicker {
+  color:var(--green);
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:2.4px;
+  text-transform:uppercase;
+  margin-bottom:15px;
+}
+h1 {
+  font-size:clamp(42px,6vw,74px);
+  line-height:1.02;
+  letter-spacing:-2.5px;
+  margin-bottom:22px;
+}
+.hero p {
+  max-width:650px;
+  color:#d7d9d5;
+  font-size:18px;
+  margin-bottom:30px;
+}
+.hero-actions {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.visual {
+  min-height:370px;
+  display:grid;
+  place-items:center;
+}
+.lift {
+  width:245px;
+  height:310px;
+  border:10px solid #777c75;
+  border-bottom-width:18px;
+  background:#111;
+  box-shadow:0 25px 60px #0008;
+  position:relative;
+}
+.lift:before,.lift:after {
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:50%;
+  background:linear-gradient(135deg,#d8ddd7,#6d746b);
+  border:1px solid #555;
+}
+.lift:before {
+  left:0;
+}
+.lift:after {
+  right:0;
+}
+.lift .beam {
+  position:absolute;
+  z-index:2;
+  left:50%;
+  top:0;
+  bottom:0;
+  width:3px;
+  background:#343834;
+}
+.lift .light {
+  position:absolute;
+  z-index:3;
+  left:50%;
+  top:-38px;
+  transform:translateX(-50%);
+  width:115px;
+  height:10px;
+  border-radius:20px;
+  background:var(--green);
+  box-shadow:0 0 25px #90b63e;
+}
+.stats {
+  background:var(--green);
+  color:var(--dark);
+}
+.stats-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+.stat {
+  padding:28px 20px;
+  text-align:center;
+  border-right:1px solid #73952f;
+}
+.stat:last-child {
+  border:0;
+}
+.stat strong {
+  display:block;
+  font-size:28px;
+}
+.stat span {
+  font-size:12px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+.section {
+  padding:88px 0;
+}
+.section.soft {
+  background:var(--soft);
+}
+.section-head {
+  max-width:700px;
+  margin-bottom:42px;
+}
+.section-head h2 {
+  font-size:clamp(30px,4vw,48px);
+  line-height:1.08;
+  letter-spacing:-1.5px;
+  margin-bottom:13px;
+}
+.section-head p {
+  color:var(--muted);
+}
+.grid-3 {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.grid-2 {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px;
+}
+.card {
+  background:#fff;
+  border:1px solid var(--line);
+  padding:30px;
+  border-radius:5px;
+  transition:.2s;
+}
+.card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 16px 35px #1f201f12;
+}
+.card .num {
+  font-size:12px;
+  color:var(--green);
+  font-weight:900;
+  letter-spacing:1.5px;
+}
+.card h3 {
+  font-size:22px;
+  margin:10px 0;
+}
+.card p {
+  color:var(--muted);
+  font-size:15px;
+}
+.icon {
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#edf4df;
+  color:var(--green);
+  font-size:22px;
+  font-weight:900;
+  margin-bottom:18px;
+}
+.split {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+.panel {
+  background:var(--dark);
+  color:#fff;
+  padding:42px;
+  border-radius:6px;
+}
+.panel h3 {
+  font-size:30px;
+  line-height:1.15;
+  margin-bottom:15px;
+}
+.panel p {
+  color:#cdd0cb;
+}
+.checks {
+  display:grid;
+  gap:15px;
+  margin-top:24px;
+}
+.check {
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+}
+.check b {
+  color:var(--green);
+}
+.page-hero {
+  padding:72px 0;
+  background:var(--dark);
+  color:#fff;
+}
+.page-hero h1 {
+  font-size:clamp(42px,5vw,64px);
+  margin-bottom:10px;
+}
+.page-hero p {
+  color:#cfd2cc;
+  max-width:700px;
+}
+.project {
+  overflow:hidden;
+  padding:0;
+}
+.project-img {
+  height:230px;
+  background:linear-gradient(135deg,#30332f,#68705f);
+  position:relative;
+}
+.project-img:before {
+  content:"";
+  position:absolute;
+  left:15%;
+  right:15%;
+  bottom:0;
+  height:82%;
+  border:9px solid #888d85;
+  background:linear-gradient(90deg,#d8ddd7 0 49%,#333 50% 51%,#d8ddd7 52%);
+  box-shadow:0 12px 30px #0005;
+}
+.project-body {
+  padding:25px;
+}
+.tag {
+  display:inline-block;
+  background:#edf4df;
+  color:#587d20;
+  font-size:11px;
+  font-weight:900;
+  padding:5px 8px;
+  margin-bottom:9px;
+}
+.form {
+  display:grid;
+  gap:15px;
+}
+.form-row {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+input,textarea,select {
+  width:100%;
+  border:1px solid #ccd2c8;
+  padding:14px;
+  border-radius:4px;
+  font:inherit;
+  background:#fff;
+  color:var(--dark);
+}
+textarea {
+  min-height:150px;
+  resize:vertical;
+}
+.contact-box {
+  display:grid;
+  gap:15px;
+}
+.contact-item {
+  padding:20px;
+  border:1px solid var(--line);
+  background:#fff;
+}
+.contact-item strong {
+  display:block;
+  margin-bottom:3px;
+}
+.contact-item span {
+  color:var(--muted);
+}
+.cta {
+  background:var(--green);
+  padding:65px 0;
+}
+.cta-inner {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+}
+.cta h2 {
+  font-size:40px;
+  line-height:1.1;
+  max-width:650px;
+}
+.faq {
+  border-top:1px solid var(--line);
+}
+details {
+  border-bottom:1px solid var(--line);
+  padding:20px 0;
+}
+summary {
+  font-weight:900;
+  cursor:pointer;
+}
+.footer {
+  background:var(--dark);
+  color:#fff;
+  padding:60px 0 25px;
+}
+.footer-grid {
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:40px;
+}
+.footer h3 {
+  margin-bottom:14px;
+}
+.footer p,.footer a {
+  color:#c6cac3;
+  font-size:14px;
+}
+.footer a {
+  display:block;
+  margin:7px 0;
+}
+.footer-bottom {
+  border-top:1px solid #393b38;
+  margin-top:40px;
+  padding-top:20px;
+  color:#9fa49c;
+  font-size:12px;
+  display:flex;
+  justify-content:space-between;
+}
+@media(max-width:800px) {
+  .topbar .inner {
+    flex-direction:column;
+    gap:2px;
+  }
+  .nav {
+    min-height:68px;
+  }
+  .links {
+    display:none;
+    position:absolute;
+    left:0;
+    right:0;
+    top:68px;
+    background:#fff;
+    border-bottom:1px solid #ddd;
+    flex-direction:column;
+    align-items:stretch;
+    padding:10px 5%;
+    gap:0;
+  }
+  .links.show {
+    display:flex;
+  }
+  .links a {
+    padding:13px 0;
+  }
+  .links a.active:after {
+    display:none;
+  }
+  .menu {
+    display:block;
+  }
+  .nav>.btn {
+    display:none;
+  }
+  .hero {
+    padding:75px 0 60px;
+  }
+  .hero-grid,.split {
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+  .visual {
+    min-height:280px;
+  }
+  .stats-grid {
+    grid-template-columns:1fr 1fr;
+  }
+  .stat {
+    border-bottom:1px solid #73952f;
+  }
+  .grid-3,.grid-2 {
+    grid-template-columns:1fr;
+  }
+  .section {
+    padding:62px 0;
+  }
+  .cta-inner {
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .cta h2 {
+    font-size:32px;
+  }
+  .footer-grid {
+    grid-template-columns:1fr;
+  }
+  .footer-bottom {
+    flex-direction:column;
+    gap:7px;
+  }
+  .form-row {
+    grid-template-columns:1fr;
+  }
+}
+</style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="container inner">
+        <span> Quality • Safety • Design
+      </span>
+      <span> +91 88678 26610 &nbsp; | &nbsp; m2helevators2022@gmail.com
+    </span>
+  </div>
+</div>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="index.html"><img src="Imags/logo.jpeg" alt="M2H Elevators Logo">
+  </a>
+  <button class="menu" onclick="document.querySelector('.links').classList.toggle('show')" aria-label="Open menu"> ☰
+</button>
+<nav class="links">
+  <a class="active" href="index.html"> Home
+</a>
+<a class="" href="about.html"> About
+</a>
+<a class="" href="services.html"> Services
+</a>
+<a class="" href="projects.html"> Projects
+</a>
+<a class="" href="contact.html"> Contact
+</a>
+</nav>
+<a class="btn" href="contact.html"> Get a Quote
+</a>
+</div>
+</header>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker">
+        M2H Elevators
+      </div>
+      <h1>
+        Moving People.<br><span style="color:var(--green)"> Elevating Life.
+      </span>
+    </h1>
+    <p>
+      Modern elevator solutions combining dependable engineering, refined cabin design, professional installation and responsive service.
+    </p>
+    <div class="hero-actions">
+      <a class="btn" href="contact.html"> Request a Consultation
+    </a>
+    <a class="btn outline" style="color:#fff;border-color:#fff" href="services.html"> Explore Services
+  </a>
+</div>
+</div>
+<div class="visual">
+  <div class="lift">
+    <div class="beam">
+    </div>
+    <div class="light">
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat">
+      <strong> 2022
+    </strong>
+    <span> Founded
+  </span>
+</div>
+<div class="stat">
+  <strong> 435+
+</strong>
+<span> Projects Done
+</span>
+</div>
+<div class="stat">
+  <strong> 360°
+</strong>
+<span> Service Approach
+</span>
+</div>
+<div class="stat">
+  <strong> 24/7
+</strong>
+<span> Support Mindset
+</span>
+</div>
+</div>
+</section>
+<section class="section">
+  <div class="container split">
+    <div>
+      <div class="kicker">
+        Who We Are
+      </div>
+      <h2 style="font-size:44px;line-height:1.1;margin-bottom:16px">
+        Elevators designed for everyday confidence.
+      </h2>
+      <p style="color:var(--muted);font-size:17px">
+        M2H Elevators was founded in 2022 in Bangalore with a focus on elevator installation, modernization, sales and service. We bring together functional engineering and thoughtful design for residential and commercial requirements.
+      </p>
+      <div style="margin-top:25px">
+        <a class="btn dark" href="about.html"> About M2H
+      </a>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="kicker">
+      Our Focus
+    </div>
+    <h3>
+      Quality. Safety. Design.
+    </h3>
+    <p>
+      Every project is approached with attention to installation quality, safety considerations, practical performance and the visual character of the space.
+    </p>
+    <div class="checks">
+      <div class="check">
+        <b> ✓
+      </b>
+      <span> Professional installation
+    </span>
+  </div>
+  <div class="check">
+    <b> ✓
+  </b>
+  <span> Modernization solutions
+</span>
+</div>
+<div class="check">
+  <b> ✓
+</b>
+<span> Sales & service support
+</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section soft">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">
+        Our Services
+      </div>
+      <h2>
+        From installation to long-term support.
+      </h2>
+      <p>
+        A complete elevator service approach for new installations and existing systems.
+      </p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="icon">
+          ↕
+        </div>
+        <h3>
+          Elevator Installation
+        </h3>
+        <p>
+          Planned installation support with attention to site requirements, equipment and finishing.
+        </p>
+      </div>
+      <div class="card">
+        <div class="icon">
+          ↻
+        </div>
+        <h3>
+          Modernization
+        </h3>
+        <p>
+          Upgrade existing elevator systems with refreshed components, controls and cabin aesthetics.
+        </p>
+      </div>
+      <div class="card">
+        <div class="icon">
+          ⚙
+        </div>
+        <h3>
+          Sales & Service
+        </h3>
+        <p>
+          Product guidance, maintenance support and responsive service for elevator requirements.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cta">
+  <div class="container cta-inner">
+    <h2>
+      Let’s plan an elevator solution for your building.
+    </h2>
+    <a class="btn dark" href="contact.html"> Talk to M2H
+  </a>
+</div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>
+          M2H ELEVATORS
+        </h3>
+        <p>
+          Installation and modernization, sales and service — built around Quality, Safety, & Design.
+        </p>
+      </div>
+      <div>
+        <h3>
+          Quick Links
+        </h3>
+        <a href="index.html"> Home
+      </a>
+      <a href="about.html"> About
+    </a>
+    <a href="services.html"> Services
+  </a>
+  <a href="projects.html"> Projects
+</a>
+<a href="contact.html"> Contact
+</a>
+</div>
+<div>
+  <h3>
+    Contact
+  </h3>
+  <p>
+    No.297, 2nd Cross Raja Rajeshwari layout,<br> Mylasandra Dinne, Bangalore-560114.<br> Near vistar resorts & Hotel.
+  </p>
+  <p style="margin-top:10px">
+    +91 88678 26610<br> +91 76391 84111<br> +91 78928 00255<br> +91 95781 22125
+  </p>
+</div>
+</div>
+<div class="footer-bottom">
+  <span> © 2026 M2H Elevators. All rights reserved.
+</span>
+<span> Quality • Safety • Design
+</span>
+</div>
+</div>
+</footer>
+</body>
+</html>
